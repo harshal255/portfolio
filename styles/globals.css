@@ -28,3 +28,24 @@ a {
     background: black;
   }
 }
+
+/* for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(110, 13, 237) rgb(27, 0, 67);
+}
+
+/* for Chrome */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(27, 0, 67);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(110, 13, 237);
+  border-radius: 20px;
+  border: 3px solid rgb(14, 0, 67);
+}

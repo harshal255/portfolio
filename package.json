@@ -9,9 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.4",
+    "@nextui-org/react": "^1.0.0-beta.10",
+    "aos": "^2.3.4",
+    "emailjs": "^4.0.1",
     "next": "13.0.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.6.0",
+    "react-tilt": "^0.1.4",
+    "react-type-animation": "^2.1.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
