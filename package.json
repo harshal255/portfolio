@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.9.1",
     "@headlessui/react": "^1.7.4",
     "@nextui-org/react": "^1.0.0-beta.10",
     "aos": "^2.3.4",

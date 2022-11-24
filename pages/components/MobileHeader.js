@@ -63,11 +63,7 @@ const MobileHeader = () => {
                                     About
                                 </Link>
                             </div>
-                            <div>
-                                <Link href="/Blogs" className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white animate-[wiggle_1s_linear_infinite] delay-100 bg-gradient-to-r from-cyan-500 to-violet-500 hover:bg-indigo-700">
-                                    Blogs
-                                </Link>
-                            </div>
+                           
                             <div>
                                 <Link href="/Skills" className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white animate-[wiggle_1s_linear_infinite] delay-400 bg-gradient-to-r from-cyan-500 to-violet-500 hover:bg-indigo-700">
                                     Skills
@@ -79,7 +75,7 @@ const MobileHeader = () => {
                                 </Link>
                             </div>
                             <div>
-                                <Link href="/Projects" className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white animate-[wiggle_1s_linear_infinite] delay-800 bg-gradient-to-r from-cyan-500 to-violet-500 hover:bg-indigo-700">
+                                <Link href="/More_Projects" className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white animate-[wiggle_1s_linear_infinite] delay-800 bg-gradient-to-r from-cyan-500 to-violet-500 hover:bg-indigo-700">
                                     Projects
                                 </Link>
                             </div>
