@@ -5,9 +5,6 @@ import AllProjects from './AllProjects';
 import { FiExternalLink, FiCode } from 'react-icons/fi'
 
 
-
-
-
 const Projects = () => {
 
   const buttonStyle = "flex mx-auto lg:text-xl text-[1rem] text-white hover:text-purple-500 hover:border-white border py-2 px-8 focus:outline-none rounded text-lg border-purple-700 hover:drop-shadow-xl  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 transition-all duration-500 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-zinc-400 before:transition-all before:duration-300 before:opacity-10 before:hover:opacity-0 before:hover:scale-50 after:absolute after:top-0 after:left-0 after:w-full after:h-full after:opacity-0 after:transition-all after:duration-300 after:border after:border-white/50 after:scale-125 after:hover:opacity-100 after:hover:scale-100";
@@ -23,9 +20,9 @@ const Projects = () => {
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap -m-4">
             {AllProjects.map((Projects) => {
-              
-              return <div key={Projects.id}>
-                <div className="p-4 md:w-1/3 ">
+
+              return <>
+                <div className="p-4 md:w-1/3 " key={Projects.id}>
 
                   <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                     <Tilt>
@@ -58,7 +55,7 @@ const Projects = () => {
                   </div>
                 </div>
 
-              </div>
+              </>
             }).slice(0, 3)}
 
 

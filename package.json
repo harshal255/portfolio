@@ -13,6 +13,7 @@
     "@headlessui/react": "^1.7.4",
     "@nextui-org/react": "^1.0.0-beta.10",
     "aos": "^2.3.4",
+    "axios": "^1.2.0",
     "emailjs": "^4.0.1",
     "next": "13.0.4",
     "react": "18.2.0",

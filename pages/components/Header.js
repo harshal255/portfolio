@@ -24,7 +24,7 @@ const Header = () => {
                
                 <li className={listyle}><Link href="/Skills" > Skills</Link></li>
                 <li className={listyle}><Link href="/Experience" >Experience</Link></li>
-                <li className={listyle}><Link href="/More_Projects" > Projects</Link></li>
+                {/* <li className={listyle}><Link href="/More_Projects" > Projects</Link></li> */}
 
                 <li className={listyle}><Link href="/Contact" > Contact</Link></li>
 
