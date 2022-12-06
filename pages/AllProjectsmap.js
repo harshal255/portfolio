@@ -1,16 +1,8 @@
 import Link from 'next/link';
 import React from 'react'
-
-
-
 import Tilt from 'react-tilt'
-import AllProjects from './AllProjects';
-
+// import AllProjects from './AllProjects';
 const AllProjectsmap = ({ data }) => {
-
-
-
-
   return (
     <div id='AllProjectsmap'>
 
@@ -18,8 +10,8 @@ const AllProjectsmap = ({ data }) => {
         <div className="container px-5 py-14 mx-auto">
           <div className="flex flex-wrap -m-4">
             {data.map((Projects, index) => {
-              return <>
-                <div className="p-4 md:w-1/3 " data-aos="zoom-in" >
+              return (
+                <div className="p-4 md:w-1/3 " data-aos="zoom-in" key={Projects.id}>
 
                   <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                     <Tilt>
@@ -54,7 +46,7 @@ const AllProjectsmap = ({ data }) => {
                   </div>
                 </div>
 
-              </>
+              )
             })}
           </div>
         </div>

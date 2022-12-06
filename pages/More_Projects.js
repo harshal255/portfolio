@@ -30,7 +30,7 @@ const More_Projects = () => {
 
 
     return (
-        <div id='More_Projects' className='pt-[5rem] '>
+        <div id='More_Projects' className='pt-[5rem]'>
             <img src="/images/color-sharp.png" alt="" className='absolute -z-30 mt-8 opacity-50  left-0 animate-pulse' />
             <img src="/images/color-sharp2.png" alt="" className='absolute -z-30 -mt-64  opacity-60 right-0 animate-pulse' />
             <h1 className='sm:text-[3rem] text-[2rem] font-semibold title-font underline text-center '> All Projects</h1>
