@@ -22,7 +22,7 @@ const Hero = () => {
 
   return (
     <>
-      <div class="relative rounded-b-[5rem] pt-[5rem] " id='Hero'>
+      <div className="relative rounded-b-[5rem] pt-[5rem] " id='Hero'>
 
 
 

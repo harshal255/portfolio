@@ -6,7 +6,7 @@ const More_about = () => {
       <img src="/images/color-sharp.png" alt="" className='absolute -z-30 mt-8 opacity-50  left-0 animate-pulse' />
       <img src="/images/color-sharp2.png" alt="" className='absolute -z-30 -mt-64  opacity-60 right-0 animate-pulse' />
       <div className='flex justify-evenly items-center text-center pt-[6rem] '>
-        <h1 className='sm:text-[4rem] text-[2rem] font-extralight title-font text-center xl:text-start font-semibold' data-aos="fade-right">Education</h1>
+        <h1 className='sm:text-[4rem] text-[2rem] title-font text-center xl:text-start font-semibold' data-aos="fade-right">Education</h1>
         <hr className='  w-3/4 border  hidden xl:inline' data-aos="fade-left" />
       </div>
       <section className=" body-font overflow-hidden mx-10">
