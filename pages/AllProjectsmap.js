@@ -9,7 +9,7 @@ const AllProjectsmap = ({ data }) => {
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-14 mx-auto">
           <div className="flex flex-wrap -m-4">
-            {data.map((Projects, index) => {
+            {data.map((Projects) => {
               return (
                 <div className="p-4 md:w-1/3 " data-aos="zoom-in" key={Projects.id}>
 
