@@ -23,7 +23,7 @@ export default function Home() {
         <About></About>
         <Skills></Skills>
         <Experience></Experience>
-        <Projects></Projects>
+        {/* <Projects></Projects> */}
         <Contact></Contact>
         <Technology></Technology>
 
