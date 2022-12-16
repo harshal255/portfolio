@@ -5,8 +5,6 @@ import Script from "next/script"
 import { useEffect } from 'react';
 import imageUrlBuilder from '@sanity/image-url'
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { fadeIn } from '../utils/motion';
 import Tilt from 'react-tilt'
 
 const Blogs = ({ blogs }) => {
@@ -32,8 +30,8 @@ const Blogs = ({ blogs }) => {
 
             {blogs.map((item) => {
                 return (
-                    <div key={item.slug.current}> <motion.div
-                        variants={fadeIn('up', 'spring', 0.5, 1)}
+                    <div key={item.slug.current}> <div
+
                         className="flex md:flex-row flex-col border rounded-lg my-5 p-10 md:px-28 justify-center items-center"
 
                     >
@@ -76,7 +74,7 @@ const Blogs = ({ blogs }) => {
 
 
                         </div>
-                    </motion.div>
+                    </div>
                     </div>
                 )
             }).slice(0, 2)
