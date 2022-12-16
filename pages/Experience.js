@@ -1,8 +1,17 @@
-import React from 'react'
-import Tilt from 'react-tilt'
+import React from 'react';
+import Tilt from 'react-tilt';
+import { createClient } from "next-sanity";
+import imageUrlBuilder from '@sanity/image-url';
 
 
-const Experience = () => {
+const Experience = ({ experience }) => {
+
+  const client = createClient({
+    projectId: "puehhpql",
+    dataset: "production",
+    useCdn: false
+  });
+  const builder = imageUrlBuilder(client)
 
   const iconstyle = "w-20 h-20 inline-flex items-center justify-center rounded-full bg-purple-100 text-purple-500 mb-5 flex-shrink-0 p-4 cursor-pointer "
   return (
@@ -15,44 +24,24 @@ const Experience = () => {
       </div>
 
       <section className=" body-font">
-        <div className="container px-5 py-24 m-auto">
+        <div className="container px-4 md:px-20 py-24 m-auto">
 
-          <div className="flex flex-wrap sm:-m-4  -mb-10 -mt-4 justify-between ">
+          <div className="flex flex-col md:flex-row justify-between gap-5">
+            {experience.map((item) => {
+              return (
+                <div className="md:p-10 p-4 md:w-1/3 flex flex-col text-center items-center h-[25rem] border border-gray-200  rounded-lg overflow-y-scroll" key={item.title}>
+                  <Tilt className={iconstyle}>
+                    <img src={builder.image(item.icon).width(50).url()} alt={item.title} />
+                  </Tilt>
+                  <div className="flex-grow">
+                    <h2 className=" text-lg title-font mb-3 font-semibold">{item.title} <br /> Year & Month: {item.launchAt.slice(0,7)}</h2>
+                    <p className="leading-relaxed text-base text-gray-500">{item.description}</p>
 
-            <div className="md:p-10 p-4  md:w-1/3 flex flex-col text-center items-center h-[25rem] border border-gray-200  rounded-lg overflow-y-scroll">
-              <Tilt className={iconstyle}>
-                <img src="images/Experience/lakshya.jpg" alt="Lakshya" />
-              </Tilt>
-              <div className="flex-grow">
-                <h2 className=" text-lg title-font  mb-3 font-semibold">Web-O-Then at Lakshya 2022</h2>
-                <p className="leading-relaxed text-base text-gray-500">I{`'`}ve Participated in web-o-then at lakshya-2022 : {`"`}ANAGATA, Divulging the unprocedented event{`"`} is a national level edu-tech Fest Organized by team robocon ldce & <span className='text-white'>Secured 3rd Position🎉</span></p>
+                  </div>
+                </div>
+              )
+            })}
 
-              </div>
-            </div>
-
-
-            <div className="p-4 md:p-10 md:w-1/3 flex flex-col text-center items-center h-[25rem]  border border-gray-200  rounded-lg overflow-y-scroll">
-              <Tilt className={iconstyle}>
-                <img src="images/Experience/SIH2022.jpg" alt="Smart India Hackathon" />
-              </Tilt>
-              <div className="flex-grow">
-                <h2 className=" text-lg title-font font-semibold mb-3">SSIP HACKTHON 2022</h2>
-                <p className="leading-relaxed text-base  text-gray-500">I participated in SSIP HACKTHON AZADI KA AMRIT MAHOTSAV at L.D. College of Engineering in Ahmedabad. & worked as a frontend web developer to made react application with bootstrap css for our problem <span className='text-white'> story of the startups.</span></p>
-
-              </div>
-            </div>
-
-
-            <div className="p-4 md:p-10 md:w-1/3 flex flex-col text-center items-center h-[25rem]  border border-gray-200  rounded-lg overflow-y-scroll">
-              <Tilt className={iconstyle}>
-                <img src="images/Experience/innovator-club.jpg" alt="Innoator Club" />
-              </Tilt>
-              <div className="flex-grow">
-                <h2 className=" text-lg title-font font-semibold mb-3">Innovator Club 2022</h2>
-                <p className="leading-relaxed text-base  text-gray-500">I joined the innovator club as a ui designer. I{`'`}ve made a ui design for innovator club website. As a part of the project,I{`'`}ve mainly worked on the ui design which creating in Figma Software.</p>
-
-              </div>
-            </div>
 
           </div>
 
@@ -63,3 +52,24 @@ const Experience = () => {
 }
 
 export default Experience
+
+export async function getServerSideProps() {
+  const client = createClient({
+    projectId: "puehhpql",
+    dataset: "production",
+    useCdn: false
+  });
+
+  const Experiencequery = `*[_type == "experience"]`;
+  const experience = await client.fetch(Experiencequery);
+
+
+
+
+  return {
+    props: {
+      experience
+
+    }
+  }
+}

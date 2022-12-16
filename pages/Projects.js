@@ -3,6 +3,7 @@ import React from 'react'
 import Tilt from 'react-tilt'
 import AllProjects from './AllProjects';
 import { FiExternalLink, FiCode } from 'react-icons/fi'
+import Image from 'next/image';
 
 
 const Projects = () => {
@@ -22,12 +23,12 @@ const Projects = () => {
             {AllProjects.map((Projects) => {
 
               return (
-                <div className="p-4 md:w-1/3 " key={Projects.id}>
+                <div className="p-4 md:w-1/3 sm:bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-gray-900 via-gray-900 to-black bg-black " key={Projects.id}>
 
                   <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                    <Tilt>
-                      <img className="lg:h-64 md:h-36 w-full object-cover object-center" src={`/images/Projects/${Projects.image}.png`} alt="blog" />
-                    </Tilt>
+                    <div>
+                      <Image className="lg:h-64 md:h-36 w-full object-cover object-center hover:scale-110 duration-150" height={200} width={200} src={`/images/Projects/${Projects.image}.png`} alt="blog" />
+                    </div>
 
                     <div className="p-6">
                       <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Project Name</h2>
@@ -56,7 +57,7 @@ const Projects = () => {
                 </div>
 
               )
-            }).slice(0, 3)}
+            })}
 
 
 
