@@ -3,14 +3,13 @@ import Hero from './Hero';
 import About from './About';
 import Skills from './Skills';
 import Experience from './Experience';
-
 import Contact from './Contact';
 import Technology from './Technology';
 import Footer from './components/Footer';
 import Quotes from './components/Quotes';
 import { createClient } from "next-sanity";
 import imageUrlBuilder from '@sanity/image-url';
-import Blogs from './blogs';
+import Blogs from './Blogs';
 import Projects from './Pro';
 
 export default function Home({ blogs, profile, skills, technology, programming, development, others, experience, project }) {
