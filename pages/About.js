@@ -18,32 +18,34 @@ const About = ({ profile }) => {
   const builder = imageUrlBuilder(client)
   return (
     <div id='About' className='sm:pt-[6rem] pt:5 rounded-b-[5rem]'>
-      <img src="/images/color-sharp.png" alt="" className='absolute -z-30 mt-8 opacity-50  left-0 animate-pulse' />
-      <img src="/images/color-sharp2.png" alt="" className='absolute -z-30 -mt-64  opacity-60 right-0 animate-pulse' />
-      <div className='flex justify-evenly items-center text-center mt-5 sm:mt-0 '>
-        <h1 className='sm:text-[4rem] text-[2rem] font-semibold title-font   xl:text-start ' data-aos="fade-right">About Me</h1>
-        <hr className=' sm:w-3/4 w-2/5 border-2  xl:inline' data-aos="fade-left" />
+      <img src="/images/color-sharp.png" alt="" className='absolute -z-30 mt-8 opacity-50 left-0 animate-pulse' />
+      <img src="/images/color-sharp2.png" alt="" className='absolute -z-30 -mt-64 opacity-60 right-0 animate-pulse' />
+      <div className='flex justify-evenly items-center text-center sm:mt-0'>
+        <h1 className=' text-[2rem] font-semibold title-font xl:text-start' data-aos="fade-right">About Me</h1>
+        <hr className='sm:w-3/4 w-2/5 border-2 xl:inline' data-aos="fade-left" />
       </div>
       <div className='flex'>
-        <div className='hidden xl:inline pl-5 '><Rightbar></Rightbar></div>
+        <div className='hidden xl:inline pl-5'><Rightbar></Rightbar></div>
 
 
 
 
 
-        <div className=" body-font">
-          <div className="container flex justify-between py-12 xl:flex-row flex-col items-center">
+        <div className="body-font">
+          <div className=" flex justify-between md:flex-row flex-col items-center">
 
-            <div className="mb-5 md:mb-0 md:ml-10 xl:w-1/3">
-              <div className="sm:my-8">
-                <img src={builder.image(profile.aboutimage).width(500).url()} alt="About" />
+            <div className="mb-5 md:mb-0 md:ml-10 sm:w-1/3 ">
+              <div className="sm:my-8 ">
+                <img src={builder.image(profile.aboutimage).width(1500).url()} alt="About" />
+
+               
               </div>
 
 
             </div>
-            <div className="lg:flex-grow xl:w-1/2 px-5 lg:mr-10  flex flex-col md:items-start md:text-left items-center text-center md:py-16">
+            <div className="lg:flex-grow md:w-3/5 px-5 lg:mr-10  flex flex-col md:items-start md:text-left items-center text-center md:py-16">
 
-              <h1 className="title-font sm:text-3xl text-xl mb-4 font-semibold text-gray-500">{profile.aboutone}
+              <h1 className="title-font sm:text-3xl md:text-2xl lg:text-xl mb-4 font-semibold text-gray-500">{profile.aboutone}
               </h1>
               <p className="mb-8 leading-relaxed sm:text-[1.25rem] text-gray-500"> <span className='text-white font-normal'>
                 {profile.abouttwo}

@@ -19,19 +19,19 @@ const Experience = ({ experience }) => {
       <img src="/images/color-sharp.png" alt="" className='absolute -z-30 mt-8 opacity-50  left-0 animate-pulse' />
       <img src="/images/color-sharp2.png" alt="" className='absolute -z-30 -mt-64  opacity-60 right-0 animate-pulse' />
       <div className='flex justify-evenly items-center text-center mt-5 sm:mt-0 '>
-        <h1 className='sm:text-[4rem] text-[2rem] font-semibold title-font xl:text-start' data-aos="fade-right">Experience</h1>
+        <h1 className=' text-[2rem] font-semibold title-font xl:text-start' data-aos="fade-right">Experience</h1>
         <hr className=' sm:w-3/4 w-2/5 border-2  xl:inline' data-aos="fade-left" />
       </div>
 
       <section className=" body-font">
         <div className="container px-4 md:px-20 py-24 m-auto">
 
-          <div className="flex flex-col md:flex-row justify-between gap-5">
+          <div className="flex flex-col lg:flex-row justify-between gap-5">
             {experience.map((item) => {
               return (
-                <div className="md:p-10 p-4 md:w-1/3 flex flex-col text-center items-center h-[25rem] border border-gray-200  rounded-lg overflow-y-scroll" key={item.title}>
+                <div className="md:p-10 p-4 lg:w-1/3 flex flex-col text-center items-center h-[25rem] border border-gray-200  rounded-lg overflow-y-scroll" key={item.title}>
                   <Tilt className={iconstyle}>
-                    <img src={builder.image(item.icon).width(50).url()} alt={item.title} />
+                    <img src={builder.image(item.icon).width(500).url()} alt={item.title} />
                   </Tilt>
                   <div className="flex-grow">
                     <h2 className=" text-lg title-font mb-3 font-semibold">{item.title} <br /> Year & Month: {item.launchAt.slice(0,7)}</h2>

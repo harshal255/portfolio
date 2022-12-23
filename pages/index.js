@@ -6,11 +6,12 @@ import Experience from './Experience';
 import Contact from './Contact';
 import Technology from './Technology';
 import Footer from './components/Footer';
-import Quotes from './components/Quotes';
 import { createClient } from "next-sanity";
 import imageUrlBuilder from '@sanity/image-url';
 import Blogs from './Blogs';
 import Projects from './Pro';
+import Header from './components/Header';
+import MobileHeader from './components/MobileHeader';
 
 export default function Home({ blogs, profile, skills, technology, programming, development, others, experience, project }) {
 
@@ -30,6 +31,8 @@ export default function Home({ blogs, profile, skills, technology, programming, 
 
       </Head>
       <main>
+        <Header></Header>
+        <MobileHeader></MobileHeader>
         <Hero profile={profile}></Hero>
         <About profile={profile}></About>
         <Skills skills={skills} technology={technology} development={development} programming={programming} others={others}></Skills>
@@ -37,7 +40,6 @@ export default function Home({ blogs, profile, skills, technology, programming, 
         <Projects project={project}></Projects>
         <Blogs blogs={blogs}></Blogs>
         <Contact></Contact>
-        <Quotes></Quotes>
         <Technology></Technology>
         <Footer></Footer>
       </main>

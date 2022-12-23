@@ -5,12 +5,13 @@ const More_about = () => {
     <div id='More_about'>
       <img src="/images/color-sharp.png" alt="" className='absolute -z-30 mt-8 opacity-50  left-0 animate-pulse' />
       <img src="/images/color-sharp2.png" alt="" className='absolute -z-30 -mt-64  opacity-60 right-0 animate-pulse' />
-      <div className='flex justify-evenly items-center text-center pt-[6rem] '>
-        <h1 className='sm:text-[4rem] text-[2rem] title-font text-center xl:text-start font-semibold' data-aos="fade-right">Education</h1>
-        <hr className='  w-3/4 border  hidden xl:inline' data-aos="fade-left" />
+      <div className="flex flex-col text-center w-full my-10">
+        <h1 className="text-3xl font-medium title-font mb-4 text-purple-600">My Education ✨✌</h1>
       </div>
+
+
       <section className=" body-font overflow-hidden mx-10">
-        <div className="container px-5 py-12 mx-auto">
+        <div className="container px-5  mx-auto">
           <div className="-my-8 divide-y-2 divide-gray-100">
             <div className="py-8 flex flex-wrap md:flex-nowrap">
               <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">

@@ -57,7 +57,7 @@ const Contact = () => {
                 <label htmlFor="message" className="leading-7 text-sm ">Message</label>
                 <textarea id="message" name="message" required className="w-full bg-transparent rounded border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 h-32 text-base outline-none  py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" value={message} onChange={event => setMessage(event.target.value)}></textarea>
               </div>
-              <button className={buttonStyle + ` items-center`}>Button</button>
+              <button className={buttonStyle + ` items-center ml-[2rem] xl:ml-0`}>Button</button>
               <p className="text-xl md:text-2xl text-gray-500 mt-3 text-center">{text}</p>
             </form>
           </div>

@@ -10,7 +10,7 @@ const Technology = () => {
             <section className="">
                 <div className="py-8 lg:py-16 mx-auto max-w-screen-xl px-4">
                     <h1 className="sm:text-3xl text-2xl title-font text-center mb-10  font-semibold">Technology Used</h1>
-                    <div className="grid grid-cols-6 gap-5 text-gray-500 sm:gap-10 dark:text-gray-400">
+                    <div className="grid grid-cols-6 gap-3 text-gray-500 sm:gap-10 dark:text-gray-400">
                         <Tilt className="flex justify-center items-center rounded-[50%] overflow-clip">
                             <Tooltip content={"Next.js"}>
                                 <img src="images/skills/next.png" alt="Next js" />

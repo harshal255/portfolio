@@ -23,20 +23,20 @@ const Pro = ({ project }) => {
             <img src="/images/color-sharp.png" alt="" className='absolute -z-30 mt-8 opacity-50  left-0 animate-pulse' />
             <img src="/images/color-sharp2.png" alt="" className='absolute -z-30 -mt-64  opacity-60 right-0 animate-pulse' />
             <div className='flex justify-evenly items-center text-center mt-5 sm:mt-0 '>
-                <h1 className='sm:text-[4rem] text-[2rem] font-semibold title-font xl:text-start' data-aos="fade-right">Projects</h1>
-                <hr className=' sm:w-3/4 w-1/2 border-2  xl:inline' data-aos="fade-left" />
+                <h1 className=' text-[2rem] font-semibold title-font xl:text-start' data-aos="fade-right">Projects</h1>
+                <hr className=' sm:w-5/6 w-1/2 border-2  xl:inline' data-aos="fade-left" />
             </div>
             <section className="text-gray-600 body-font">
-                <div className="container px-5 py-24 mx-auto">
+                <div className="container px-10 py-24 mx-auto">
                     <div className="flex flex-wrap -m-4">
                         {project.map((item) => {
 
                             return (
-                                <div className="p-4 md:w-1/3  " key={item.title}>
+                                <div className="p-4 lg:w-1/3  " key={item.title}>
 
                                     <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                                         <div>
-                                            <img className="lg:h-64 md:h-36 w-full object-cover object-center hover:scale-110 duration-150" src={builder.image(item.imgUrl).width(1500).url()} alt={item.title} />
+                                            <img className=" md:h-80 lg:h-64 w-full object-cover object-center hover:scale-110 duration-150" src={builder.image(item.imgUrl).width(1500).url()} alt={item.title} />
                                         </div>
 
                                         <div className="p-6">

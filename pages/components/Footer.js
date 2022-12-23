@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
         <Link href='/' className="flex title-font font-semibold items-center md:justify-start justify-center ">
 
-          <span className="ml-3 text-xl text-white hover:text-purple-600">Harshal Kahar</span>
+          <span className="ml-3 text-xl text-white hover:text-purple-900">Harshal Kahar</span>
         </Link>
         <p className="text-sm  sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">©2022
           <span className=" ml-1" rel="noopener noreferrer" target="_blank">All rights reserved</span>
