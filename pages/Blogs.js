@@ -22,7 +22,7 @@ const Blogs = ({ blogs }) => {
 
 
     return (
-        <div id='blogs' className=" pt:5 sm:p-16 xs:p-8 px-6 py-12 relative z-10 sm:bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black bg-black w-[100%] overflow-clip">
+        <div id='blogs' className=" pt:5 sm:p-16 xs:p-8 px-6 py-12 relative z-10 sm:bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black bg-black">
             <div className='flex justify-evenly items-center text-center mt-5 sm:mt-0 '>
                 <h1 className=' text-[2rem] font-semibold title-font xl:text-start' data-aos="fade-right">Blogs</h1>
                 <hr className=' sm:w-3/4 w-2/3  border-2  xl:inline' data-aos="fade-left" />

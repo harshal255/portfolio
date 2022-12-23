@@ -15,7 +15,7 @@ const Experience = ({ experience }) => {
 
   const iconstyle = "w-20 h-20 inline-flex items-center justify-center rounded-full bg-purple-100 text-purple-500 mb-5 flex-shrink-0 p-4 cursor-pointer "
   return (
-    <div id="Experience" className='sm:pt-[6rem] pt:5 rounded-b-[5rem] overflow-x-hidden'>
+    <div id="Experience" className='sm:pt-[6rem] pt:5 rounded-b-[5rem]'>
       <img src="/images/color-sharp.png" alt="" className='absolute -z-30 mt-8 opacity-50  left-0 animate-pulse' />
       <img src="/images/color-sharp2.png" alt="" className='absolute -z-30 -mt-64  opacity-60 right-0 animate-pulse' />
       <div className='flex justify-evenly items-center text-center mt-5 sm:mt-0 '>

@@ -19,7 +19,7 @@ const Pro = ({ project }) => {
 
     const buttonStyle = "flex mx-auto lg:text-xl text-[1rem] text-white hover:text-purple-500 hover:border-white border py-2 px-8 focus:outline-none rounded text-lg border-purple-700 hover:drop-shadow-xl  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 transition-all duration-500 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-zinc-400 before:transition-all before:duration-300 before:opacity-10 before:hover:opacity-0 before:hover:scale-50 after:absolute after:top-0 after:left-0 after:w-full after:h-full after:opacity-0 after:transition-all after:duration-300 after:border after:border-white/50 after:scale-125 after:hover:opacity-100 after:hover:scale-100";
     return (
-        <div id='Projects' className='sm:pt-[6rem] pt:5  rounded-b-[5rem] sm:bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-gray-900 via-gray-900 to-black bg-black xl:h-[65rem] -z-40 '>
+        <div id='Projects' className='sm:pt-[6rem] pt:5  rounded-b-[5rem] sm:bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-gray-900 via-gray-900 to-black bg-black xl:h-[65rem] -z-40 overflow-hidden'>
             <img src="/images/color-sharp.png" alt="" className='absolute -z-30 mt-8 opacity-50  left-0 animate-pulse' />
             <img src="/images/color-sharp2.png" alt="" className='absolute -z-30 -mt-64  opacity-60 right-0 animate-pulse' />
             <div className='flex justify-evenly items-center text-center mt-5 sm:mt-0 '>

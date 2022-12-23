@@ -39,6 +39,7 @@ a {
 
 /* for Firefox */
 * {
+
   scrollbar-width: thin;
   scrollbar-color: rgb(110, 13, 237) rgb(27, 0, 67);
 }
@@ -59,26 +60,22 @@ a {
 }
 
 .gradient-01 {
-  background-image: linear-gradient(
-    270deg,
-    hsl(295deg 76% 51%) 0%,
-    hsl(284deg 70% 73%) 26%,
-    hsl(257deg 70% 86%) 39%,
-    hsl(202deg 92% 90%) 50%,
-    hsl(215deg 77% 81%) 61%,
-    hsl(221deg 73% 70%) 74%,
-    hsl(220deg 76% 51%) 100%
-  );
+  background-image: linear-gradient(270deg,
+      hsl(295deg 76% 51%) 0%,
+      hsl(284deg 70% 73%) 26%,
+      hsl(257deg 70% 86%) 39%,
+      hsl(202deg 92% 90%) 50%,
+      hsl(215deg 77% 81%) 61%,
+      hsl(221deg 73% 70%) 74%,
+      hsl(220deg 76% 51%) 100%);
   filter: blur(125px);
 }
 
 .hero-gradient {
-  background: linear-gradient(
-    97.86deg,
-    #a509ff 0%,
-    #34acc7 53.65%,
-    #a134c7 100%
-  );
+  background: linear-gradient(97.86deg,
+      #a509ff 0%,
+      #34acc7 53.65%,
+      #a134c7 100%);
 }
 
 .gradient-02 {
@@ -126,11 +123,9 @@ a {
 }
 
 .gradient-05 {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.04) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.04) 0%,
+      rgba(255, 255, 255, 0) 100%);
 }
 
 .feedback-gradient {
@@ -154,10 +149,3 @@ a {
   background: #65c4fa;
   filter: blur(150px);
 }
-
-/*@media only screen and (min-width: 0px) and (max-width: 449px) {
-  body {
-    width: 10rem;
-    border:2px solid green;
-  }
-} */
