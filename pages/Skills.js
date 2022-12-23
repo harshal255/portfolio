@@ -20,7 +20,7 @@ const Skills = ({ skills, technology, programming, development, others }) => {
 
 
   return (
-    <div id='Skills' className='sm:pt-[6rem] pt:5 rounded-b-[5rem]'>
+    <div id='Skills' className='sm:pt-[6rem] pt:5 rounded-b-[5rem] overflow-x-hidden'>
       <div className='flex justify-evenly items-center text-center mt-5 sm:mt-0 '>
         <h1 className='text-[2rem] font-semibold title-font xl:text-start ' data-aos="fade-right">Skills</h1>
         <hr className='sm:w-5/6 w-2/3  border-2  xl:inline' data-aos="fade-left" />

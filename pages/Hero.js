@@ -28,7 +28,7 @@ const Hero = ({ profile }) => {
 
   return (
     <>
-      <div className="relative rounded-b-[5rem] pt-[5rem]" id='Hero'>
+      <div className="relative rounded-b-[5rem] pt-[5rem] " id='Hero'>
 
 
 
@@ -78,7 +78,7 @@ const Hero = ({ profile }) => {
             </div>
             <div className='md:w-2/5 w-4/5 md:mr-[4rem] lg:m-0' >
               <Tilt>
-                <img src={builder.image(profile.image).width(1500).url()} alt="Harshal Kahar" className='rounded-full lg:py-[5rem] lg:pr-[9.5rem] p-[3rem] lg:mt-[5rem] lg:pl-0  drop-shadow-2xl md:mt-[10rem] md:p-1 lg:p-6'/>
+                <img src={builder.image(profile.image).width(1500).url()} alt="Harshal Kahar" className='rounded-full lg:py-[5rem] lg:pr-[9.5rem] p-[3rem] lg:mt-[5rem] lg:pl-0  drop-shadow-2xl md:mt-[10rem] md:p-1 lg:p-6' />
               </Tilt>
             </div>
 
