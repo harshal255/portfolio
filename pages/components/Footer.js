@@ -19,7 +19,7 @@ const Footer = () => {
           <Link href='https://github.com/harshal255' target='blank' className="">
             <AiFillGithub className={iconsyle}></AiFillGithub>
           </Link>
-          <Link href='https://www.instagram.com/harshal_kahar1230/' target='blank' className="ml-3 ">
+          <Link href='https://www.instagram.com/undefined_harshal' target='blank' className="ml-3 ">
             <AiOutlineInstagram className={iconsyle}></AiOutlineInstagram>
           </Link>
           <Link href='https://www.linkedin.com/in/harshal-kahar-4115a321b' target='blank' className="ml-3 ">

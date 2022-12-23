@@ -8,7 +8,8 @@ import Link from 'next/link';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const Hero = ({ profile }) => {
+const Hero = ({ profile, typingtext ,socialmedia}) => {
+
 
   const client = createClient({
     projectId: "puehhpql",
@@ -16,6 +17,7 @@ const Hero = ({ profile }) => {
     useCdn: false
   });
   const builder = imageUrlBuilder(client)
+
 
   useEffect(() => {
     AOS.init();
@@ -37,7 +39,7 @@ const Hero = ({ profile }) => {
         <img src="/images/color-sharp.png" alt="" className='absolute -z-30 mt-8 opacity-50  left-0 animate-pulse' />
         <img src="/images/color-sharp2.png" alt="" className='absolute -z-30 -mt-64  opacity-60 right-0 top-0 animate-pulse' />
         <div className='z-10 flex'>
-          <Rightbar></Rightbar>
+          <Rightbar socialmedia={socialmedia}></Rightbar>
 
 
           <div className='flex md:flex-row flex-col-reverse' >
@@ -56,7 +58,7 @@ const Hero = ({ profile }) => {
               <span className='sm:text-xl text-[1rem] flex'> <span className='sm:mr-2 mr-1 '>I am a </span>
 
                 <TypeAnimation
-                  sequence={['Senior Frontend Web Developer...', 1000, 'Full Stack Developer...', 1000, 'Blogger...', 1000]}
+                  sequence={[`${typingtext[0].name}`, 1000, `${typingtext[1].name}`, 1000, `${typingtext[2].name}`, 1000, `${typingtext[3].name}`, 1000]}
                   speed={75}
                   wrapper="h2"
                   repeat={Infinity}
@@ -72,13 +74,13 @@ const Hero = ({ profile }) => {
               <div className={buttons}>
 
                 <Link href="/resume"> <button className={buttonStyle}>View Resume</button></Link>
-                <Link href="https://drive.google.com/file/d/19AWe7soWgAzotFEf2qNP45geGEqTgzEz/view?usp=drivesdk" ><button className={buttonStyle}>Download Resume</button></Link>
+                <Link href={profile.resume} target="_blank"><button className={buttonStyle}>Download Resume</button></Link>
               </div>
 
             </div>
             <div className='md:w-2/5 w-4/5 md:mr-[4rem] lg:m-0' >
               <Tilt>
-                <img src={builder.image(profile.image).width(1500).url()} alt="Harshal Kahar" className='rounded-full lg:py-[5rem] lg:pr-[9.5rem] p-[3rem] lg:mt-[5rem] lg:pl-0  drop-shadow-2xl md:mt-[10rem] md:p-1 lg:p-6'/>
+                <img src={builder.image(profile.image).width(1500).url()} alt="Harshal Kahar" className='rounded-full lg:py-[5rem] lg:pr-[9.5rem] p-[3rem] lg:mt-[5rem] lg:pl-0  drop-shadow-2xl md:mt-[10rem] md:p-1 lg:p-6' />
               </Tilt>
             </div>
 
@@ -111,9 +113,18 @@ export async function getServerSideProps() {
   // const profileQuery = `*[_type == "profile"][0]`;
   // const profile = await client.fetch(profileQuery);
 
+
+  const typingquery = `*[_type == "typingtext"]`;
+  const typingtext = await client.fetch(typingquery);
+
+  const socialquery = `*[_type == "socialmedia"][0]`;
+  const socialmedia = await client.fetch(socialquery);
+
+
+
   return {
     props: {
-      profile
+      profile, typingtext, socialmedia
 
     }
   }
