@@ -32,7 +32,7 @@ const Blogs = ({ blogs }) => {
                 return (
                     <div key={item.slug.current}> <div
 
-                        className="flex md:flex-row flex-col border rounded-lg my-5 p-10 md:px-28 justify-center items-center"
+                        className="flex md:flex-row flex-col border rounded-lg my-5 p-10 md:px-28 justify-center items-center bg-black"
 
                     >
                         <a href={"/blog/" + item.slug.current}>

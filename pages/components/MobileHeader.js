@@ -9,7 +9,7 @@ import { RiMenu5Line, RiCloseFill } from 'react-icons/ri';
 
 const MobileHeader = () => {
     return (
-        <Popover className="visible sm:invisible bg-[#020917] z-50 fixed w-full top-0 ">
+        <Popover className="visible sm:invisible bg-[#020917] z-50 fixed w-full  top-0 ">
             <div className="max-w-7xl mx-auto px-4 sm:px-6  ">
                 <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
                     <div className="flex justify-start lg:w-0 lg:flex-1">
@@ -39,7 +39,7 @@ const MobileHeader = () => {
                 leaveTo="opacity-0 scale-95"
             >
                 <Popover.Group focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top md:hidden bg-black h-[100vh] ">
-                    <div className="rounded-lg shadow-lg  ">
+                    <div className="rounded-lg shadow-lg ">
                         <div className="pt-5 pb-6 px-5">
                             <div className="flex items-center justify-between">
                                 <div>

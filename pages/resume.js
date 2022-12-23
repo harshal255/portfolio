@@ -1,9 +1,15 @@
 import React from 'react'
+import { createClient } from "next-sanity";
+import PortableText from 'react-portable-text';
 
 
-const Resume = () => {
+const Resume = ({ resume }) => {
+    // console.log(resume.name);
+
+
+
     return (
-        <div className='container w-11/12 mx-auto py-[6rem] '>
+        <div className='container w-11/12 mx-auto flex justify-center items-center h-[100vh]'>
             <div className="max-w-7xl mx-auto bg-white shadow overflow-hidden sm:rounded-lg rounded-md">
                 <div className="px-4 py-5 sm:px-6">
                     <h3 className="text-lg leading-6 font-semibold text-gray-900">Harshal Kahar{`'`}s Technical Resume</h3>
@@ -13,55 +19,49 @@ const Resume = () => {
                     <dl>
                         <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt className="text-sm font-semibold text-gray-500">Name</dt>
-                            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Harshal Sureshchandra Kahar</dd>
+                            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{resume.name}</dd>
                         </div>
-                        <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                            <dt className="text-sm font-semibold text-gray-500">Experience</dt>
-                            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                <br />
-                                <ul className='text-purple-700'>
-                                    <li>~ Frontend Web Dev</li>
-                                    <li>~ Web dev with framework like React/Next.js </li>
-                                    <li>~ UI Design in Figma</li>
-                                    <li>~ Image or Video Editing</li>
-                                </ul>
-                            </dd>
-                        </div>
+
                         <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt className="text-sm font-semibold text-gray-500">Education</dt>
-                            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Pursuing Computer Engineering at L.D. College Of Engineering,Ahmedabad</dd>
+                            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{resume.metadesc}</dd>
                         </div>
                         <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt className="text-sm font-semibold text-gray-500">Academic Projects</dt>
                             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                                 <br />
-                                <ul className='text-purple-700'>
-                                    <li>~ Frontend Web Dev</li>
-                                    <li>~ Web dev with framework like React/Next.js </li>
-                                    <li>~ UI Design in Figma</li>
-                                    <li>~ Image or Video Editing</li>
-                                </ul>
+                                <PortableText
+
+                                    content={resume.content}
+                                    projectId="puehhpql"
+                                    dataset="production"
+
+
+                                />
                             </dd>
                         </div>
-                        <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                            <dt className="text-sm font-semibold text-gray-500">Email address</dt>
-                            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><a href="mailto:harshalskahar389@gmail.com" className='hover:text-purple-700'>harshalskahar389@gmail.com</a></dd>
-                        </div>
                         <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt className="text-sm font-semibold text-gray-500">Email address</dt>
+                            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><a href="mailto:harshalskahar389@gmail.com" className='hover:text-purple-700'>{resume.email}</a></dd>
+                        </div>
+                        <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt className="text-sm font-semibold text-gray-500">Skills</dt>
-                            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Frontend Web Developer, MERN Stack Web Dev, UI/UX Designer, Video & Image editor(Pro level)</dd>
+                            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{resume.skills}</dd>
                         </div>
 
-                        <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <div className="bg-white-50 px-4  sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt className="text-sm font-semibold text-gray-500">Open For Positions</dt>
                             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                                 I am open for following positions :-<br /><br />
-                                <ul className='text-purple-700'>
-                                    <li>~ Frontend Web Dev</li>
-                                    <li>~ Web dev with framework like React/Next.js </li>
-                                    <li>~ UI Design in Figma</li>
-                                    <li>~ Image or Video Editing</li>
-                                </ul>
+                                <PortableText
+
+                                    content={resume.openforposition}
+                                    projectId="puehhpql"
+                                    dataset="production"
+
+
+                                />
+
                             </dd>
                         </div>
 
@@ -73,3 +73,24 @@ const Resume = () => {
 }
 
 export default Resume
+
+export async function getServerSideProps() {
+    const client = createClient({
+        projectId: "puehhpql",
+        dataset: "production",
+        useCdn: false
+    });
+
+    const Resumequery = `*[_type == "resume"][0]`;
+    const resume = await client.fetch(Resumequery);
+
+
+
+
+    return {
+        props: {
+            resume
+
+        }
+    }
+}

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react'
 
 
+
 import { FiExternalLink, FiCode } from 'react-icons/fi'
 
 import { createClient } from "next-sanity";
@@ -18,14 +19,20 @@ const Pro = ({ project }) => {
     const builder = imageUrlBuilder(client)
 
 
+
+
+
+
     return (
         <div id='Projects' className='sm:pt-[6rem] pt:5 rounded-b-[5rem]'>
             <img src="/images/color-sharp.png" alt="" className='absolute -z-30 mt-8 opacity-50  left-0 animate-pulse' />
             <img src="/images/color-sharp2.png" alt="" className='absolute -z-30 -mt-64  opacity-60 right-0 animate-pulse' />
-            <h1 className='sm:text-[3rem] text-[2rem] font-semibold title-font underline text-center '> All Projects</h1>
-          
+            <div className="flex flex-col text-center w-full ">
+                <h1 className="text-3xl font-medium title-font mb-4 ">All Projects✨✌</h1>
+            </div>
+
             <section className="text-gray-600 body-font">
-                <div className="container px-5 py-24 mx-auto">
+                <div className="container px-5 py-12 mx-auto">
                     <div className="flex flex-wrap -m-4">
                         {project.map((item) => {
 
@@ -40,7 +47,7 @@ const Pro = ({ project }) => {
                                         <div className="p-6">
                                             <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Project Name</h2>
                                             <h1 className="title-font text-lg text-white font-medium  mb-3">{item.title}</h1>
-                                            <p className="leading-relaxed mb-3 h-[7rem] overflow-y-scroll">{item.description}</p>
+                                            <p className="leading-relaxed mb-3 h-[10rem] overflow-y-scroll">{item.description}</p>
                                             <div className="flex items-center flex-wrap ">
                                                 <Link className="text-purple-500 hover:text-purple-100 inline-flex items-center md:mb-2 lg:mb-0 mx-2" href={`${item.projectLink}`} target="_blank">Live Demo
                                                     <FiExternalLink className='mx-2'></FiExternalLink>

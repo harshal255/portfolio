@@ -3,7 +3,7 @@ import { createClient } from "next-sanity";
 import PortableText from 'react-portable-text';
 import Head from 'next/head';
 import imageUrlBuilder from '@sanity/image-url'
-const Post = ({ blog }) => {
+const Post = ({ blog, author }) => {
     const router = useRouter()
     const { slug } = router.query
 
@@ -17,6 +17,7 @@ const Post = ({ blog }) => {
 
     const builder = imageUrlBuilder(client)
 
+   
     return (
         <>
 
@@ -34,11 +35,11 @@ const Post = ({ blog }) => {
                                 <h1 className="mb-4 text-3xl font-bold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">{blog.title}</h1>
                                 <address className="flex items-center mb-6 not-italic ">
                                     <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                                        <img className="mr-4 w-16 h-16 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Jese Leos" />
+                                        <img className="mr-4 w-16 h-16 rounded-full" src={builder.image(author.image).width(200).url()} alt={author.name} />
                                         <div>
-                                            <a href="#" rel="author" className="text-xl font-bold text-gray-900 dark:text-white">Jese Leos</a>
-                                            <p className="text-base font-light text-gray-500 dark:text-gray-400">Graphic Designer, educator & CEO Flowbite</p>
-                                            <p className="text-base font-light text-gray-500 dark:text-gray-400"><time dateTime="2022-02-08" title="February 8th, 2022" pubdate="true">Feb. 8, 2022</time></p>
+                                            <a href="#" rel="author" className="text-xl font-bold text-gray-900 dark:text-white">{author.authorname}</a>
+                                            <p className="text-base font-light text-gray-500 dark:text-gray-400">{author.decs}</p>
+                                            {/* <p className="text-base font-light text-gray-500 dark:text-gray-400"><time dateTime="2022-02-08" title="February 8th, 2022" pubdate="true">{author._createdAt.slice(0, 10)}</time></p> */}
                                         </div>
                                     </div>
                                 </address>
@@ -132,7 +133,7 @@ export default Post
 
 export async function getServerSideProps(context) {
     const { slug } = context.query;
-    console.log(slug);
+    // console.log(slug);
 
 
 
@@ -143,12 +144,17 @@ export async function getServerSideProps(context) {
     });
     const query = `*[_type == "blog" && slug.current == '${slug}'][0]`;
     const blog = await client.fetch(query);
-    console.log(blog);
-   
+
+    const authorquery = `*[_type == "author"][1]`;
+    const author = await client.fetch(authorquery);
+
+
+    // console.log(blog);
+
 
     return {
         props: {
-            blog
+            blog, author
 
         }
     }
